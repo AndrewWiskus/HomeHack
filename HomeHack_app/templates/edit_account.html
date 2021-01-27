@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <div class=container>
+        <div class=header>
+            <img src="{% static 'img/AWLogo.jpg' %}" alt="AWLogo">
+            <h1>Home . Hack</h1>
+            <a href="/dash"><h3>back</h3></a>
+            <a href="/logout"><h3>log out</h3></a>
+        </div>
+        <h2 class="thin">Welcome {{request.session.user_name}}</h2>
+        <div id=edit_column>
+            {% if messages %}
+                    <ul>
+                        {% for error in messages %}
+                        <li>{{error}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            <form action="/update_user/{{request.session.user_id}}" method="post">
+                {% csrf_token %}
+                <label for="first_name">First Name:</label>
+                <br>
+                <input type="text" name="f_n" value={{user.first_name}}>
+                <br>
+                <br>
+                <label for="last_name">Last Name:</label>
+                <br>
+                <input type="text" name="l_n" value={{user.last_name}}>
+                <br>
+                <br>
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" name="email" value={{user.email}}>
+                <br>
+                <br>
+                <label for="city">City:</label>
+                <br>
+                <input type="text" name="city" value={{user.city}}>
+                <br>
+                <br>
+                <label for="state">State:</label>
+                <br>
+                <input type="text" name="state" value={{user.state}}>
+                <br>
+                <br>
+                <input class="buttons" type="submit" value="UPDATE">
+            </form>
+        </div>
+        <div class=bodypics>
+            <img src="{% static 'img/bed.jpg' %}" alt="bed">
+            <img src="{% static 'img/builtin.jpg' %}" alt="builtin">
+            <img src="{% static 'img/bunkbed.jpg' %}" alt="bunkbed">
+            <img src="{% static 'img/coffeetable.jpg' %}" alt="coffeetable">
+            <img src="{% static 'img/desk.jpg' %}" alt="desk">
+            <img src="{% static 'img/gazebo.jpg' %}" alt="gazebo">
+            <img src="{% static 'img/mantle.jpg' %}" alt="mantle">
+            <img src="{% static 'img/shelves.jpg' %}" alt="shelves">
+        </div>
+        <div class=footer>
+            <p>build  .  connect  .  repeat</p>
+        </div>
+    </div>
+</body>
+</html>

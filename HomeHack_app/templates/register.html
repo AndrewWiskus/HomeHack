@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <div class=container>
+        <div class=header>
+            <img src="{% static 'img/AWLogo.jpg' %}" alt="AWLogo">
+            <h1>Home Hack</h1>
+            <a href="/about"><h3>about</h3></a>
+            <a href="/"><h3>log in</h3></a>
+        </div>
+        <p>To sign up please fill out the form below</p>
+        {% if messages %}
+            <ul>
+                {% for error in messages %}
+                <li>{{error}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class=body>
+            <div class=log_reg>
+            <form action="/create_user" method="post">
+                {% csrf_token %}
+                <br>
+                <input type="text" name="f_n" placeholder="First Name">
+                <br>
+                <br>
+                <input type="text" name="l_n" placeholder="Last Name">
+                <br>
+                <br>
+                <input type="email" name="email" placeholder="Email">
+                <br>
+                <br>
+                <input type="text" name="city" placeholder="City">
+                <br>
+                <br>
+                <input type="text" name="state" placeholder="State">
+                <br>
+                <br>
+                <input type="password" name="pw" placeholder="Password">
+                <br>
+                <br>
+                <input type="password" name="conf_pw" placeholder="Confirm Password">
+                <br>
+                <br>
+                <input class="buttons" type="submit" value="SIGN UP">
+                <br>
+                <br>
+            </form>
+            </div>
+            <div class=bodypics>
+                <img src="{% static 'img/bed.jpg' %}" alt="bed">
+                <img src="{% static 'img/builtin.jpg' %}" alt="builtin">
+                <img src="{% static 'img/bunkbed.jpg' %}" alt="bunkbed">
+                <img src="{% static 'img/coffeetable.jpg' %}" alt="coffeetable">
+                <img src="{% static 'img/desk.jpg' %}" alt="desk">
+                <img src="{% static 'img/gazebo.jpg' %}" alt="gazebo">
+                <img src="{% static 'img/mantle.jpg' %}" alt="mantle">
+                <img src="{% static 'img/shelves.jpg' %}" alt="shelves">
+            </div>
+        </div>
+        <div class=footer>
+            <p>build  .  connect  .  repeat</p>
+        </div>
+    </div>
+</body>
+</html>

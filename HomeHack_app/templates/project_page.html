@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <div class=container>
+        <div class=header>
+            <img src="{% static 'img/AWLogo.jpg' %}" alt="AWLogo">
+            <h1>Home . Hack</h1>
+            <a href="/dash"><h3>back</h3></a>
+            <a href="/logout"><h3>log out</h3></a>
+        </div>
+        <h2 class="thin">{{project.title}}</h2>
+        <div class=project_box>
+            <p>Description: {{project.content}}</p>
+            <p>Tools used: {{project.tools}}</p>
+            <img class="project_img" src="{{ MEDIA_URL }}{{project.post_image}}" alt="{{project.title}} image">
+            <p class="small">Posted by: <a href="/user_projects/{{project.poster.id}}">{{project.poster.first_name}} {{project.poster.last_name}}</a></p>
+            {% if project.poster.id == request.session.user_id%}
+            <a class="small" href="/edit_project/{{project.id}}">Edit Project</a>
+            {% endif %}
+            {% if project.poster.id == request.session.user_id%}
+                <a class="small" href="/delete/{{project.id}}">Delete Project</a>
+            {% endif %}
+            <br>
+            <br>
+            <h4>{{project.likes.count}} people like this</h4>
+            <form action="/like/{{request.session.user_id}}/{{project.id}}">
+                {% csrf_token %}
+                <input class="buttons" type="submit" value="LIKE!">
+            </form>
+            <div id="comment_content">
+                <p>{{project.comments.count}} COMMENTS</p>
+                {% for comment in project.comments.all %}
+                    <div class="comment_box">
+                        <p>{{comment.content}}</p>
+                        <p class="small">Posted by: <a href="/user_projects/{{project.poster.id}}">{{comment.comment_poster.first_name}} {{comment.comment_poster.last_name}}</a></p>
+                        {% if comment.comment_poster.id == request.session.user_id %}
+                            <a class="small" href="/comm_delete/{{comment.id}}/{{project.id}}">Delete</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <form action="/create_comment/{{project.id}}" method="POST">
+                {% csrf_token %}
+                <textarea name="content" cols="20" rows="3"></textarea>
+                <br>
+                <input class="buttons" type="submit" value="COMMENT">
+            </form>
+        </div>
+        <div class=footer>
+            <p>build  .  connect  .  repeat</p>
+        </div>
+    </div>
+</body>
+</html>

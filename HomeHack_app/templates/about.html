@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <div class=container>
+        <div class=header>
+            <img src="{% static 'img/AWLogo.jpg' %}" alt="AWLogo">
+            <h1>Home . Hack</h1>
+            <a href="/"><h3>log in</h3></a>
+            <a href="/register"><h3>sign up</h3></a>
+        </div>
+        <div id=content>
+            <img src="{% static 'img/hammer.jpg' %}" alt="hammer">
+            <p>Home Hack is a place for people who love to create and have a passion for building. Here you will find a community that will help, encourage, and inspire you to make something new. You can post projects, ask questions, and get connected to members near you. So go make something . . . </p>
+        </div>
+        <div class=footer>
+            <p>build  .  connect  .  repeat</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+html * {
+   font-family: 'Montserrat', sans-serif !important;
+}
+.thin {
+    font-weight: 50;
+    text-transform: uppercase;
+}
+.container {
+    width: 1000px;
+    margin: auto;
+    background-color: white;
+}
+.header {
+    width: 1000px;
+    margin: auto;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+.header > img {
+    width: 60px;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px;
+}
+.header > h1 {
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 28px;
+    margin-right: 440px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.header > h3 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 20;
+    margin: 5px;
+    vertical-align: top;
+    margin-top: 40px;
+}
+.header > a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 40;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+}
+.body {
+    width: 1000px;
+    margin: 0 auto;
+}
+#content > img {
+    width: 300px;
+    border-radius: 10px;
+    margin: 10px;
+    display: inline-block;
+    border: 2px solid black;
+}
+#content > p {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    width: 600px;
+    margin: 10px;
+    vertical-align: top;
+}
+.bodypics {
+    width: 780px;
+    display: inline-block;
+}
+.bodypics > img{
+    height: 120px;
+    border: 2px solid black;
+    margin: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+.body > p{
+    font-family: 'Montserrat', sans-serif;
+}
+.buttons {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+}
+.log_reg {
+    width: 155px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.log_reg > h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+.footer {
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 1000px;
+    margin-top: 10px;
+}
+.footer > p {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.add_project_column {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 415px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+.project_column {
+    background-color: black;
+    width: 1000px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 0px;
+}
+.project_column > h2 {
+    color: white;
+    margin-left: 10px;
+}
+.project_box {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    width: 945px;
+    background-color: white;
+    vertical-align: top;
+}
+.project_box >h4 {
+    font-size: 75%;
+}
+.dash_pic {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    vertical-align: top;
+}
+.dash_pic > img{
+    width: 512px;
+    border-radius: 10px;
+}
+#edit_column {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+#comment_content{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: black;
+    margin: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-bottom: 50px;
+}
+#comment_content > p {
+    color: white;
+}
+.comment_box {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.small {
+    font-size: 75%;
+}
+.project_img {
+    width: 500px;
+    border-radius: 10px;
+    display: inline;
+    border: 2px solid black;
+}

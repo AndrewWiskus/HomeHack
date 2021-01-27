@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Project</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <div class=container>
+        <div class=header>
+            <img src="{% static 'img/AWLogo.jpg' %}" alt="AWLogo">
+            <h1>Home . Hack</h1>
+            <a href="/project_page/{{project.id}}"><h3>back</h3></a>
+            <a href="/logout"><h3>log out</h3></a>
+        </div>
+        <h2>Welcome {{request.session.user_name}}</h2>
+        {% if messages %}
+                <ul>
+                    {% for error in messages %}
+                    <li>{{error}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        <div class=add_project_column>
+            <form action="/update_project/{{project.id}}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2>Edit Project</h2>
+                <label for="title">Title:</label>
+                <br>
+                <input type="text" name="title" value={{project.title}}>
+                <br>
+                <br>
+                <label for="description">Description:</label>
+                <br>
+                <textarea name="content" value={{project.content}} cols="56" rows="4"></textarea>
+                <br>
+                <br>
+                <label for="tools">Tools Required:</label>
+                <br>
+                <textarea name="tools" value={{project.tools}} cols="56" rows="4"></textarea>
+                <br>
+                <br>
+                <label for="post_image">Upload Image:</label>
+                <br>
+                <br>
+            <input type="file" name="post_image" id="post_image">
+                <input class="buttons" type="submit" value="Update">
+<!-- 
+
+
+                <label for="title">Title:</label>
+                <br>
+                <input type="text" name="title" value={{project.title}}>
+                <br>
+                <br>
+                <label for="content">Description:</label>
+                <br>
+                <input type="text" name="content" value={{project.content}}>
+                <br>
+                <br>
+                <label for="tools">Tools:</label>
+                <br>
+                <input type="text" name="tools" value={{project.tools}}>
+                <br>
+                <br>
+                <input type="submit" value="Update"> -->
+            </form>
+        </div>
+        <div class=dash_pic>
+            <img src="{% static 'img/gazebo.jpg' %}" alt="gazebo">
+        </div>
+        <div class=footer>
+            <p>build  .  connect  .  repeat</p>
+        </div>
+    </div>
+</body>
+</html>

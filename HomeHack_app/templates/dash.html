@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <div class=container>
+        <div class=header>
+            <img src="{% static 'img/AWLogo.jpg' %}" alt="AWLogo">
+            <h1>Home . Hack</h1>
+            <a href="/edit_account/{{request.session.user_id}}"><h3>account</h3></a>
+            <a href="/logout"><h3>log out</h3></a>
+        </div>
+        <h2 class="thin">welcome {{request.session.user_name}}</h2>
+        <div class="search_bar">
+            <form action="/get_project_queryset" method="get">
+                <input type="text" class="form-control" name="q" id="id_q" placeholder="Search Projects. . .">
+            </form>
+        </div>
+        {% if messages %}
+        <ul>
+            {% for error in messages %}
+            <li>{{error}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class=add_project_column>
+            <form action="/create_project" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+            <h2 class="thin">Add a Project</h2>
+            <label for="title">Title:</label>
+            <br>
+            <input type="text" name="title">
+            <br>
+            <br>
+            <label for="description">Description:</label>
+            <br>
+            <textarea name="content" cols="56" rows="4"></textarea>
+            <br>
+            <br>
+            <label for="tools">Tools Required:</label>
+            <br>
+            <textarea name="tools" cols="56" rows="4"></textarea>
+            <br>
+            <br>
+            <label for="post_image">Upload Image:</label>
+            <br>
+            <br>
+            <input type="file" name="post_image" id="post_image">
+            <br>
+            <br>
+            <input class="buttons" type="submit" value="CREATE">
+            </form>
+        </div>
+        <div class=dash_pic>
+            <img src="{% static 'img/gazebo.jpg' %}" alt="gazebo">
+        </div>
+        <div class=project_column>
+            <h2 class="thin">Projects</h2>
+            {% for project in all_projects %}
+            <div class=project_box>
+                <a href="project_page/{{project.id}}">{{project.title}}</a>
+                <br>
+                <br>
+                <img class="project_img" src="{{ MEDIA_URL }}{{project.post_image}}" alt="{{project.title}} image">
+                <h4>Posted by: <a href="user_projects/{{project.poster.id}}">{{project.poster.first_name}} {{project.poster.last_name}}</a></h4>
+                <h4>{{project.likes.count}} people like this</h4>
+                <h4>{{project.comments.count}} comments</h4>
+            </div>
+            {% endfor %}
+        </div>
+        <div class=footer>
+            <p>build  .  connect  .  repeat</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class=container>
+        <div class=header>
+            <img src="{% static 'img/AWLogo.jpg' %}" alt="AWLogo">
+            <h1>Home Hack</h1>
+            <a href="/about"><h3>about</h3></a>
+            <a href="/register"><h3>sign up</h3></a>
+        </div>
+        <div class=body>
+            <div class=bodypics>
+                <img src="{% static 'img/bed.jpg' %}" alt="bed">
+                <img src="{% static 'img/builtin.jpg' %}" alt="builtin">
+                <img src="{% static 'img/bunkbed.jpg' %}" alt="bunkbed">
+                <img src="{% static 'img/coffeetable.jpg' %}" alt="coffeetable">
+                <img src="{% static 'img/desk.jpg' %}" alt="desk">
+                <img src="{% static 'img/gazebo.jpg' %}" alt="gazebo">
+                <img src="{% static 'img/mantle.jpg' %}" alt="mantle">
+                <img src="{% static 'img/shelves.jpg' %}" alt="shelves">
+            </div>
+            <div class=log_reg>
+                <h3>Log In</h3>
+                <form action="/login" method="post">
+                    {% csrf_token %}
+                <input type="email" name="email" placeholder="email">
+                <br>
+                <br>
+                <input type="password" name="pw" placeholder="password">
+                <br>
+                <br>
+                <input class="buttons" type="submit" value="LOG IN">
+                <br>
+                <br>
+                </form>
+            </div>
+            <div class=footer>
+                <p>build  .  connect  .  repeat</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
