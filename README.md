@@ -8,11 +8,11 @@ Take a look around, get inspired, have fun!
 
 Getting Started
 
-Prior to configuring your virtualenv, ensure you have python version 
+Prior to configuring your virtualenv, ensure you have python version 2.7 
 
 To manually create a virtualenv on MacOS and Linux:
 
-$ python3 -m venv .venv
+$ python -m venv .venv
 
 After the init process completes and the virtualenv is created, you can use the following step to activate your virtualenv
 
@@ -20,4 +20,8 @@ $ source .venv/bin/activate
 
 Once the virtualenv is activated, you can install the required dependencies.
 
-$ pip install -r ((requirements coming soon!))
+$ pip install -r requirements.txt
+
+Navigate into the HomeHack file
+
+Run file
