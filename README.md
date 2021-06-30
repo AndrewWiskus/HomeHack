@@ -18,4 +18,4 @@ $ source .venv/bin/activate
 
 Once the virtualenv is activated, you can install the required dependencies.
 
-$ pip install -r requirements
+$ pip install -r ((requirements coming soon!))
