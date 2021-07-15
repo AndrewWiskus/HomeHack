@@ -10,7 +10,7 @@ Getting Started
 
 Prior to configuring your virtualenv, ensure you have python version 2.7 
 
-To manually create a virtualenv on MacOS and Linux:
+To manually create a virtualenv on MacOS:
 
 $ python -m venv .venv
 
@@ -22,6 +22,8 @@ Once the virtualenv is activated, you can install the required dependencies.
 
 $ pip install -r requirements.txt
 
-Navigate into the HomeHack file
+Navigate into the HomeHack file and input run command
 
-Run file
+$ python manage.py runserver
+
+Copy and paste server into browser
